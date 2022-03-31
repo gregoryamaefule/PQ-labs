@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <script src="https://kit.fontawesome.com/e26e4a68b3.js" crossorigin="anonymous"></script>
+
+
+    <title>PQ-Labs - FUTO's Largest Past Questions Database</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100&family=Poiret+One&family=Poppins:wght@100;300;400;500&family=Russo+One&display=swap');
+        header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: white;
+        }
+        .header-container{
+            margin:1% 5%;
+        }
+        header>a{
+             margin:1% 5%;
+        }
+        #menuplus{
+            margin-left: 2vw;
+            text-decoration: none;
+            color: black;
+        }
+        #log-in{
+            text-decoration: none;
+            border-radius:25px;
+            background-color: #00994d;
+            color: white;
+            padding: 10px;
+            display: inline-block;
+            width: 130px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+
+        }#logo-header{
+            color: #00994d;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 28px;
+            padding: 10px;
+            font-style: normal;
+        }
+        #logo{
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 22px;
+            padding: 10px;
+            font-style: italic;    
+        }
+        #menuplus{
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            padding: 10px;
+            border: 2px solid #00994d;
+            border-radius: 25px;
+            color: #14141f;
+
+        }
+        #welcome-banner{
+            background-color: #14141f;
+            margin: 0px -10px;
+            min-height: 75vh;
+            max-height: 110vh;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            color: white;
+        }
+        #welcome-banner>h1{
+            font-family: 'Poppins', sans-serif;
+            font-weight: 2300;
+            font-size: 300%;
+            }
+        #welcome-banner>p{
+            color: #ffccef;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bolder;
+            font-size: 20px;
+            margin-top: -10px;
+            margin-bottom: 35px;
+        }
+        input[type=text]{
+            width: 500px;
+            height: 32px;
+            padding: 10px;
+            color: #14141f;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+        #submit{
+            width: 100px;
+            height: 59px;
+            padding: 10px;
+            color: white;
+            background-color: #00994d;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-left: -4px;
+        }
+        #welcome-banner>a{
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        #courses{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+            max-height: auto;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .course-container{
+            display: flex;
+            flex-direction: column;
+        }
+        .course-container>a{
+            margin-top: 10px;
+        }
+        .one{
+            color: white;
+            background-color: #00994d;
+            border-radius: 20px;
+            padding: 10px;
+            text-decoration: none;
+            width: 150px;
+            align-self: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+        }
+        .two{
+            color: black;
+            background-color: #ffff99;
+            border-radius: 20px;
+            padding: 10px;
+            text-decoration: none;
+            width: 150px;
+            align-self: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+        }
+        .three{
+            color: white;
+            background-color: #14141f;
+            border-radius: 20px;
+            padding: 10px;
+            text-decoration: none;
+            width: 150px;
+            align-self: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+        }
+        .course-container>h1{
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            margin: 10px;
+        }
+        .course-container>p{
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+        #phy102{
+            background-color: #cce6ff;
+            margin-left: -10px;
+            padding: 30px;
+        }
+        #mth202{
+            background-color: #ffff99;
+            margin-right: -10px;
+            padding: 30px;
+        }
+        #ens302{
+            background-color: #14141f;
+            margin-left: -10px;
+            padding: 30px;
+        }
+        #coe504{
+            background-color: #ffe6ff;
+            margin-right: -10px;
+            padding: 30px;
+        }
+        .product-two{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        .product-two>img{
+            max-width: 80vw;
+            height: auto;
+            margin: 15px 0px;
+        }
+        .product-two>h1{
+            font-size: 33px;
+            font-weight: bolder;
+        }
+        .product-two>p{
+            font-size: 18px;
+            font-weight: 400;
+            margin: 5px;
+        }
+        .product-two>a{
+            text-decoration: none;
+            background-color: #14141f;
+            border-radius: 20px;
+            width: 400px ;
+            height: 45px;
+            color: white;
+            font-size: 19px;
+            padding: 3px;
+            margin: 19px;
+        }
+        @media screen and (max-width: 700px){
+            header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: white;
+        }
+        .header-container{
+            margin:10px 10px;
+        }
+        header>a{
+             margin:1% 5%;
+        }
+        #menuplus{
+            margin-left: 2vw;
+            text-decoration: none;
+            color: black;
+        }
+        #log-in{
+            text-decoration: none;
+            border-radius:20px;
+            background-color: #00994d;
+            color: white;
+            padding: 3px;
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            margin-top: 10px;
+
+        }#logo-header{
+            color: #00994d;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 28px;
+            padding: 10px;
+            font-style: normal;
+        }
+        #logo{
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 22px;
+            padding: 10px;
+            font-style: italic;    
+        }
+        #menuplus{
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 4px;
+            border: 2px solid #00994d;
+            border-radius: 25px;
+            color: #14141f;
+
+        }
+        #welcome-banner{
+            background-color: #14141f;
+            margin: 0px -10px;
+            min-height: 75vh;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            color: white;
+        }
+        #welcome-banner>h1{
+            font-family: 'Poppins', sans-serif;
+            font-weight: 1600;
+            font-size: 200%;
+            }
+        #welcome-banner>p{
+            color: #ffccef;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bolder;
+            font-size: 16px;
+            margin-top: -10px;
+            margin-bottom: 35px;
+        }
+        input[type=text]{
+            width: 60vw;
+            height: 22px;
+            padding: 6px;
+            color: #14141f;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+        #submit{
+            width: 20vw;
+            height: 40px;
+            padding: 0px;
+            color: white;
+            background-color: #00994d;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-left: -4px;
+            margin-top: 10px;
+        }
+        #welcome-banner>a{
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        #courses{
+            display: flex;
+            flex-direction: column;
+            min-height: 60vh;
+            max-height: auto;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            width: 100%;
+        }
+        .course-container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .course-container>a{
+            margin-top: 10px;
+        }
+        .one{
+            color: white;
+            background-color: #00994d;
+            border-radius: 20px;
+            padding: 10px;
+            text-decoration: none;
+            width: 150px;
+            align-self: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+        }
+        .two{
+            color: black;
+            background-color: #ffff99;
+            border-radius: 20px;
+            padding: 10px;
+            text-decoration: none;
+            width: 150px;
+            align-self: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+        }
+        .three{
+            color: white;
+            background-color: #14141f;
+            border-radius: 20px;
+            padding: 10px;
+            text-decoration: none;
+            width: 150px;
+            align-self: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+        }
+        .course-container>h1{
+            font-size: 60px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bolder;
+        }
+        .course-container>p{
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+        #phy102{
+            background-color: #cce6ff;
+            margin-left: -10px;
+            padding: 30px;
+        }
+        #mth202{
+            background-color: #ffff99;
+            margin-right: -10px;
+            padding: 30px;
+        }
+        #ens302{
+            background-color: #14141f;
+            margin-left: -10px;
+            padding: 30px;
+        }
+        #coe504{
+            background-color: #ffe6ff;
+            margin-right: -10px;
+            padding: 30px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <span id="logo"> <span id="logo-header">PQ</span>Labs</span>
+            <a href="#" id="menuplus"> MENU<i class="fa-solid fa-plus"></i></a>
+        </div>
+        <a href="#" id="log-in">Log in</a>
+
+    </header>
+    <main>
+        <section id="welcome-banner">
+            <h1>Master your Course</h1>
+            <p>with FUTO's Largest Online Past Questions Database</p>
+            <form action="#">
+                <input type="text" id="search" name="searchgate" placeholder="Search our tutorials, e.g. MTH102">
+                <button id="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <a href="#">Not Sure Where To Begin?</a>
+
+        </section>
+        <section id="courses">
+            <div class="course-container" id="phy102">
+                <h1>PHY102</h1>
+                <p>Electricity and Magnetism</p>
+                <a href="#" class="one">Learn PHY102</a>
+                <a href="#" class="two">Video Tutorial</a>
+                <a href="#" class="three">Practice PQ</a>
+            </div>
+            <div class="course-container" id="mth202">
+                <h1>MTH202</h1>
+                <p>Linear Algebra</p>
+                <a href="#" class="one">Learn MTH202</a>
+                <a href="#" class="two" style="background-color: #cce6ff;">Video Tutorial</a>
+                <a href="#" class="three">Practice PQ</a>
+            </div>
+            <div class="course-container" id="ens302">
+                <h1 style="color: white;">ENS302</h1>
+                <p style="color: white;">Entreprenuer Studies II</p>
+                <a href="#" class="one">Learn ENS302</a>
+                <a href="#" class="two">Video Tutorial</a>
+                <a href="#" class="three" style="background-color: white;color: black;">Practice PQ</a>
+            </div>
+            <div class="course-container" id="coe504">
+                <h1>COE504</h1>
+                <p>Microwave Communications Systems</p>
+                <a href="#" class="one">Learn COE504</a>
+                <a href="#" class="two">Video Tutorial</a>
+                <a href="#" class="three">Practice PQ</a>
+            </div>
+        </section>
+        <!--
+        <section class="product-one">
+            <h1 id="hone">Kickstart your study</h1>
+            <h1 id="htwo">Kickstart <br> your <br> study</h1>
+            <h1 id="pone">Get a Private Tutor</h1>
+            <h1 id="ptwo">Get <br> a Private <br> Tutor</h1>
+            <a href="#">Get started</a>
+        </section>
+        -->
+        <section class="product-two">
+            <h1>Opportunities Desk</h1>
+            <p>Learn how to apply for Internships,Scholarships, Side Hustle Jobs,etc.</p>
+            <p>For example, how to create a CV.</p>
+            <img src="img_nature_wide.jpg" alt="">
+            <a href="#">LEARN HOW TO</a>
+        </section>
+    </main>
+    <!--
+    <footer>
+        <p>PQLabs is optimised for learning,mastering of courses using PQ. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.</p>
+        <ul>
+            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+        </ul>
+    </footer>
+    -->
+</body>
+</html>
